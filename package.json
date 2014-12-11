@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "jasmine": "jasmine-node spec/ --verbose"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,12 @@
   },
   "devDependencies": {
     "chai": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-express-server": "^0.4.19",
+    "grunt-jasmine-node": "^0.2.1",
+    "grunt-mocha-test": "^0.12.4",
+    "jasmine-node": "^1.14.5",
     "mocha": "^2.0.1"
   }
 }

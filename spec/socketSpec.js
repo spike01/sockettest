@@ -1,6 +1,3 @@
-var chai = require('chai');
-var expect = chai.expect;
-
 var io = require('socket.io-client');
 
 var socketURL = 'http://0.0.0.0:5000';
@@ -33,6 +30,7 @@ describe("Chat Server",function(){
       client2.on('new user', function(usersName){
         expect(usersName).to.equal(chatUser2.name + " has joined.");
         client2.disconnect();
+        done();
       });
 
     });
@@ -42,9 +40,8 @@ describe("Chat Server",function(){
       numUsers += 1;
 
       if(numUsers === 2){
-        expect(usersName).to.equal(chatUser2.name + " can't code.");
+        expect(usersName).to.equal(chatUser2.name + " has joined.");
         client1.disconnect();
-        done();
       }
     });
   });
