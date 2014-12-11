@@ -31,7 +31,7 @@ describe("Chat Server",function(){
       });
 
       client2.on('new user', function(usersName){
-        expect(usersName).to.equal(chatUser2.name + " can't code.");
+        expect(usersName).to.equal(chatUser2.name + " has joined.");
         client2.disconnect();
         done();
       });
