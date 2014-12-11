@@ -10,9 +10,9 @@ var options ={
   'force new connection': true
 };
 
-var chatUser1 = {'name':'Tom'};
-var chatUser2 = {'name':'Sally'};
-var chatUser3 = {'name':'Dana'};
+var chatUser1 = {'name':'Mihai'};
+var chatUser2 = {'name':'Spike'};
+var chatUser3 = {'name':'Roi'};
 
 describe("Chat Server",function(){
 
@@ -31,7 +31,7 @@ describe("Chat Server",function(){
       });
 
       client2.on('new user', function(usersName){
-        expect(usersName).to.equal(chatUser2.name + " has joined.");
+        expect(usersName).to.equal(chatUser2.name + " can't code.");
         client2.disconnect();
         done();
       });
