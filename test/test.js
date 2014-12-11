@@ -42,7 +42,7 @@ describe("Chat Server",function(){
       numUsers += 1;
 
       if(numUsers === 2){
-        expect(usersName).to.equal(chatUser2.name + " can't code.");
+        expect(usersName).to.equal(chatUser2.name + " has joined.");
         client1.disconnect();
         done();
       }
