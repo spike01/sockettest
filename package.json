@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -R spec",
-    "jasmine": "jasmine-node spec/ --verbose"
+    "jasmine": "jasmine-node --verbose spec/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.10.5",
     "socket.io": "^1.2.1",
     "socket.io-client": "^1.2.1"
   },

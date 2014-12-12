@@ -13,6 +13,10 @@ var chatUser3 = {'name':'Roi'};
 
 describe("Chat Server",function(){
 
+  it('true is true', function(){
+    expect(true).toBe(true);
+  });
+
   it('Should broadcast new user to all users', function(done){
     var client1 = io.connect(socketURL, options);
 
