@@ -3,7 +3,7 @@ var expect = chai.expect;
 
 var io = require('socket.io-client');
 
-var socketURL = 'http://0.0.0.0:5000';
+var socketURL = 'http://0.0.0.0:3000';
 
 var options ={
   transports: ['websocket'],
