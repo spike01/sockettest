@@ -1,6 +1,6 @@
 var io = require('socket.io-client');
 
-var socketURL = 'http://0.0.0.0:5000';
+var socketURL = 'http://0.0.0.0:3000';
 
 var options ={
   transports: ['websocket'],
@@ -13,14 +13,11 @@ var chatUser3 = {'name':'Roi'};
 
 describe("Chat Server",function(){
 
-  it('true is true', function(){
-    expect(true).toBe(true);
-  });
-
   it('Should broadcast new user to all users', function(done){
     var client1 = io.connect(socketURL, options);
 
     client1.on('connect', function(data){
+
       client1.emit('connection name', chatUser1);
 
       /* Since first client is connected, we connect
@@ -32,7 +29,7 @@ describe("Chat Server",function(){
       });
 
       client2.on('new user', function(usersName){
-        expect(usersName).to.equal(chatUser2.name + " has joined.");
+        expect(usersName).toEqual(chatUser2.name + " has joined.");
         client2.disconnect();
         done();
       });
@@ -44,7 +41,7 @@ describe("Chat Server",function(){
       numUsers += 1;
 
       if(numUsers === 2){
-        expect(usersName).to.equal(chatUser2.name + " has joined.");
+        expect(usersName).toEqual(chatUser2.name + " has joined.");
         client1.disconnect();
       }
     });
